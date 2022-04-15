@@ -1,8 +1,18 @@
 import { defineNuxtConfig } from 'nuxt3'
-// import presetIcons from '@unocss/preset-icons'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
+  typescript: {
+    strict: true,
+  },
+  publicRuntimeConfig: {
+    F_API_KEY: process.env.F_API_KEY,
+    F_AUTH_DOMAIN: process.env.F_AUTH_DOMAIN,
+    F_PROJECT_ID: process.env.F_PROJECT_ID,
+    F_STORAGE_BUCKET: process.env.F_STORAGE_BUCKET,
+    F_MESSAGING_SENDER_ID: process.env.F_MESSAGING_SENDER_ID,
+    F_APP_ID: process.env.F_APP_ID,
+  },
   buildModules: [
     '@unocss/nuxt',
   ],
@@ -16,16 +26,7 @@ export default defineNuxtConfig({
     attributify: true, // enabled `@unocss/preset-attributify`,
 
     // core options
-    shortcuts: [
-
-    ],
+    shortcuts: [],
     rules: [],
-    // presets: [
-    //   presetIcons({
-    //     collections: {
-    //       ic: () => import('@iconify-json/ic/icons.json').then(i => i.default as any),
-    //     }
-    //   })
-    // ]
   },
 })
