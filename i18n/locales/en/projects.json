@@ -1,0 +1,26 @@
+[
+  {
+    "name": "GAGU Shop",
+    "description": "A practice e-commerce platform for furniture, built with Vue and Vuex to implement core business logic. Includes features such as a shopping cart, order processing flow, and a responsive design. The user interface is styled with Bulma for a clean and modern look.",
+    "img_path": "/images/projects/gagu-shop.jpeg",
+    "source_link": "https://github.com/listennn08/GAGU-Shop/",
+    "demo_link": "https://listennn08.github.io/GAGU-Shop/",
+    "techStack": "Vue, Vuex, Bulma"
+  },
+  {
+    "name": "Where's YouBike",
+    "description": "A GIS-based map application built with Leaflet that allows users to search for shared bikes in Taiwan and view recommended cycling routes. Designed to help users discover great places to ride. Built with Remix.js, React, Leaflet, and TypeScript.",
+    "img_path": "/images/projects/where's-youbike.jpeg",
+    "source_link": "https://github.com/listennn08/rent-bike",
+    "demo_link": "https://rent-bike.netlify.app/",
+    "techStack": "Remixjs, Leaflet, TypeScript, WindiCSS"
+  },
+  {
+    "name": "Tourism of Taiwan Attractions",
+    "description": "A web app that allows users to search for tourist attractions and local food in Taiwan using keywords. It also provides quick access to popular cities to help users easily find what they’re looking for. Built with Vue 3 and Vite.",
+    "img_path": "/images/projects/tourism.jpeg",
+    "source_link": "https://github.com/listennn08/tourism",
+    "demo_link": "https://listennn08.github.io/tourism",
+    "techStack": "Vue 3, Vite, TypeScript, WindiCSS"
+  }
+]

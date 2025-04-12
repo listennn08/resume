@@ -1,0 +1,75 @@
+[
+  {
+    "company": "Botrista Technology",
+    "title": "Frontend Engineer",
+    "duration": "Jun 2023 - Present",
+    "responsibilities": [
+      "Successfully migrated Cloudbar and related packages to Vue 3, integrating TypeScript to enhance type safety and maintainability.",
+      "Refactored core modules, improving system performance by approximately 30% and enhancing maintainability.",
+      "Developed a <b>Proof of Concept (PoC)</b> project from scratch to validate feature requirements and automate tasks, significantly reducing users' daily workload.",
+      "Researched and implemented <b>Tableau report embedding</b>, optimizing costs related to licensing.",
+      "Collaborated with backend engineers to design and establish an <b>RBAC (Role-Based Access Control) system</b>, improving security and flexibility.",
+      "Integrated <b>Google Analytics (GA) and Sentry</b> to monitor Cloudbar traffic and usage, enhancing observability and debugging efficiency.",
+      "Developed and maintained <b>unit tests</b> for shared components, ensuring code reliability and testability."
+    ],
+    "techStack": {
+      "Frontend": "Vue 2/3, Vuex, Pinia, Vite, TailwindCSS, Element UI/Plus, Nuxt 3",
+      "Backend": "Express.js, MongoDB"
+    }
+  },
+  {
+    "company": "EMQ Inc.",
+    "title": "Software Engineer",
+    "duration": "Jun 2022 - Dec 2022",
+    "responsibilities": [
+      "Maintained frontend projects and refactored parts of the codebase, reducing development time and improving code quality.",
+      "Collaborated with <b>PMs and backend engineers</b> to evaluate and develop new features.",
+      "Worked closely with <b>UI/UX designers</b> to enhance the user interface based on user feedback, increasing user satisfaction.",
+      "Set up a <b>Dockerized testing environment</b>, streamlining cross-environment testing and ensuring deployment consistency.",
+      "Wrote and maintained <b>E2E tests and unit tests</b> to improve software reliability.",
+      "Maintained the internal <b>Storybook UI</b> for consistent component documentation."
+    ],
+    "techStack": {
+      "Frontend": "React, GraphQL, Apollo Client, ECharts, Highcharts, Semantic UI, Styled Components"
+    }
+  },
+  {
+    "company": "PwC Taiwan",
+    "title": "Senior Associate",
+    "duration": "Feb 2021 - Jun 2022",
+    "responsibilities": [
+      "Maintained and developed internal <b>Google Site and SharePoint</b> platforms.",
+      "Developed and maintained <b>frontend projects using Vue.js</b>.",
+      "Implemented unit and <b>E2E tests</b> to ensure application reliability.",
+      "Researched and integrated <b>Redis Server</b> to optimize data caching.",
+      "Designed and developed internal <b>automation tools</b>, significantly reducing manual workload.",
+      "Built a <b>template generation tool</b> using <b>DevExtreme Vue</b>, allowing backend engineers to quickly generate Vue Single File Components (SFC) via CLI or a UI interface.",
+      "Managed projects using <b>Lerna</b>, ensuring efficient package handling."
+    ],
+    "keyProjects": {
+      "Stamp Management System": "Digitalized and managed accountants' signatures and stamps. (Vue 2, Pinia, DevExtreme Vue)",
+      "Certificate Management System": "Allowed users to upload and manage expiring certificates. (Vue 2, DevExtreme Vue, .NET Core)"
+    },
+    "techStack": {
+      "Frontend": "Vue 2/3, Vite, DevExtreme Vue",
+      "Backend": "Express.js, WebSocket, .NET Core"
+    }
+  },
+  {
+    "company": "Standard Chemical & Pharmaceutical",
+    "title": "Software Engineer",
+    "duration": "Sep 2018 - Feb 2021",
+    "responsibilities": [
+      "Maintained server infrastructure and designed internal web applications.",
+      "Developed applications using <b>LotusScript and JavaScript</b>, transitioning legacy <b>Notes applications to web-based</b> solutions.",
+      "Optimized <b>system UI</b> and implemented validation mechanisms to improve user experience.",
+      "Developed a <b>Resource Reservation System</b> for meeting room and IT equipment scheduling. (Nuxt.js, Axios, FullCalendar, BootstrapVue, VeeValidate)",
+      "Maintained databases using <b>Oracle</b> and implemented CRUD operations."
+    ],
+    "techStack": {
+      "Frontend": "Nuxt.js, Vue.js, BootstrapVue",
+      "Backend": "Express.js",
+      "Database": "PostgreSQL, Oracle"
+    }
+  }
+]

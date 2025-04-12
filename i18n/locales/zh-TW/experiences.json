@@ -1,0 +1,75 @@
+[
+  {
+    "company": "百睿達有限公司 <small>(Botrista Technology.)<small>",
+    "title": "前端工程師 <small>(Frontend Engineer)<small>",
+    "duration": "2023 年 1 月 - 至今",
+    "responsibilities": [
+      "成功遷移 Cloudbar 及相關套件至 Vue 3，並導入 TypeScript 增強型別檢查，提高程式碼可維護性",
+      "重構核心模組，提升系統效能與可維護性，優化渲染效能 約 30% 從零開發",
+      "<b>概念驗證（PoC）</b>專案，驗證功能需求並開發自動化工具，顯著減少使用者日常工作時間",
+      "深入研究並成功實作 <b>Tableau 報表嵌入方案</b>，降低授權成本",
+      "與後端協作 設計並建立 <b>RBAC (Role-Based Access Control) 權限機制</b>，提升系統安全性與彈性",
+      "導入 <b>Google Analytics (GA) and Sentry</b> 監控 Cloudbar 使用情況與流量，提升產品可觀察性與問題排查效率",
+      "為共用元件撰寫 <b>unit tests</b>，提升程式碼穩定性與可測試性"
+    ],
+    "techStack": {
+      "前端": "Vue 2/3, Vuex, Pinia, Vite, TailwindCSS, Element UI/Plus, Nuxt 3",
+      "後端": "Express.js, MongoDB"
+    }
+  },
+  {
+    "company": "易安聯有限公司 <small>(EMQ Inc.)<small>",
+    "title": "軟體工程師 <small>(Software Engineer)<small>",
+    "duration": "2022 年 6 月 - 2022 年 12 月",
+    "responsibilities": [
+      "維護並優化前端專案，重構部分程式碼，減少 20% 以上的開發時間",
+      "與 PM 及後端團隊合作，評估並開發新功能，確保產品穩定交付",
+      "與 UI / UX 設計團隊緊密協作，根據使用者回饋改善介面，提升使用者滿意度",
+      "建立 Docker 測試環境，協助團隊進行跨環境測試，確保部署一致性",
+      "撰寫 E2E 測試與單元測試，提升測試覆蓋率與系統穩定性",
+      "維護內部 Storybook UI，優化元件庫管理，提升開發效率"
+    ],
+    "techStack": {
+      "前端": "React、GraphQL、Apollo Client、ECharts、Highcharts、Semantic UI、Styled Components"
+    }
+  },
+  {
+    "company": "資誠聯合會計師事務所",
+    "title": "Senior Associate",
+    "duration": "2021 年 2 月 - 2022 年 6 月",
+    "responsibilities": [
+      "開發及維護 Google Site 與 SharePoint 專案",
+      "維護並優化 內部前端專案，使用 Vue 進行開發與測試",
+      "撰寫單元測試與 E2E 測試，提高系統穩定性",
+      "研究與導入 Redis Server，改善系統效能"
+    ],
+    "keyProjects": {
+      "印鑑管理系統": "將會計師簽名及印鑑電子化 (Vue 2, Pinia, DevExtreme Vue)",
+      "憑證管理系統": "讓使用者上傳憑證並自動解析與管理到期時間 ((Vue 2, DevExtreme Vue, .NET Core)"
+    },
+    "techStack": {
+      "前端": "Vue 2/3、Vite、DevExtreme Vue",
+      "後端": "Express.js、WebSocket、.NET Core、Redis",
+      "開發工具": "Lerna（管理 CLI 與 UI 工具）",
+      "資料庫": "PostgreSQL"
+    }
+  },
+  {
+    "company": "生達化學製藥",
+    "title": "資訊專員",
+    "duration": "2018 年 9 月 - 2021 年 2 月",
+    "responsibilities": [
+      "維護公司內部伺服器與系統，確保 IT 設備穩定運行",
+      "設計與開發 內部網頁表單，優化作業流程",
+      "轉移 Notes 應用程式至 Web 平台，使用 AJAX 呼叫後端 LotusScript 代理程式",
+      "轉移 Notes 上運作的應用程式至 web 開發，使用 AJAX 呼叫後端 LotusScript 代理程式",
+      "優化系統介面，透過防呆機制提升使用者體驗",
+      "開發資源預約系統，管理會議室與 IT 設備租借日程"
+    ],
+    "techStack": {
+      "前端": "Nuxt.js、axios、FullCalendar、BootstrapVue、VeeValidate",
+      "後端": "Express.js、LotusScript",
+      "資料庫": "Oracle、PostgreSQL"
+    }
+  }
+]

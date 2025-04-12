@@ -1,0 +1,26 @@
+[
+  {
+    "name": "GAGU Shop",
+    "description": "一個家具類型的電商平台練習專案，使用 Vue 和 Vuex 實作核心商業邏輯，具備購物車、訂單處理流程及響應式設計等功能。介面設計採用 Bulma，打造簡潔現代的使用者體驗。",
+    "img_path": "/images/projects/gagu-shop.jpeg",
+    "source_link": "https://github.com/listennn08/GAGU-Shop/",
+    "demo_link": "https://listennn08.github.io/GAGU-Shop/",
+    "techStack": "Vue, Vuex, Bulma"
+  },
+  {
+    "name": "Where's YouBike",
+    "description": "一個使用 Leaflet 打造的地理資訊地圖應用，讓使用者可以搜尋台灣的共享單車，並查看推薦的自行車路線，協助使用者發現適合騎乘的地點。使用 Remix.js、React、Leaflet 與 TypeScript 開發。",
+    "img_path": "/images/projects/where's-youbike.jpeg",
+    "source_link": "https://github.com/listennn08/rent-bike",
+    "demo_link": "https://rent-bike.netlify.app/",
+    "techStack": "Remixjs, Leaflet, TypeScript, WindiCSS"
+  },
+  {
+    "name": "台灣景點搜尋",
+    "description": "一個旅遊搜尋應用程式，讓使用者可以透過關鍵字搜尋台灣的景點與美食，並提供熱門城市捷徑，快速找到想去的地方。使用 Vue 3 與 Vite 開發。",
+    "img_path": "/images/projects/tourism.jpeg",
+    "source_link": "https://github.com/listennn08/tourism",
+    "demo_link": "https://listennn08.github.io/tourism",
+    "techStack": "Vue 3, Vite, TypeScript, WindiCSS"
+  }
+]
