@@ -163,7 +163,7 @@ export default function Page({ params }: { params: Promise<{ language: string }>
                   <h4 className="text-2xl font-bold">{project.name}</h4>
                   <div className="text-lg mb-4 flex items-center gap-1">
                     <a className="hover:text-secondary" href={project.source_link} target="_blank">Github</a>
-                    <span className="text-gray-600">|</span>
+                    <span className="text-gray-400">|</span>
                     <a className="hover:text-secondary" href={project.demo_link} target="_blank">Demo</a>
                   </div>
                   <p className="text-lg mb-4">{project.description}</p>
@@ -181,7 +181,7 @@ export default function Page({ params }: { params: Promise<{ language: string }>
               <div key={education.name} className="flex flex-col pb-8">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-2xl font-bold">{parse(education.name)}</h4>
-                  <span className="text-gray-600 italic">{parse(education.duration)}</span>
+                  <span className="text-gray-400 italic">{parse(education.duration)}</span>
                 </div>
                 <p className="text-xl font-semibold mb-2">{parse(education.degree)}</p>
               </div>
