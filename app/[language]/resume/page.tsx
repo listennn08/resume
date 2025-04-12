@@ -3,10 +3,11 @@ import { use } from "react";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import parse from "html-react-parser";
 
-import PrintButton from "../../components/print-button";
-import ToggleThemeButton from "../../components/toggle-theme-button";
-import TranslateButton from "../../components/translate-button";
+import PrintButton from "@/app/components/print-button";
+import ToggleThemeButton from "@/app/components/toggle-theme-button";
+import TranslateButton from "@/app/components/translate-button";
 
+import { useTranslation } from "@/i18n";
 import experienceDataEN from "@/i18n/locales/en/experiences.json";
 import experienceDataTW from "@/i18n/locales/zh-TW/experiences.json";
 import educationDataEN from "@/i18n/locales/en/educations.json";
@@ -14,8 +15,7 @@ import educationDataTW from "@/i18n/locales/zh-TW/educations.json";
 import projectsDataEN from "@/i18n/locales/en/projects.json";
 import projectsDataTW from "@/i18n/locales/zh-TW/projects.json";
 
-import Avatar from "../../assets/avatar.jpeg";
-import { useTranslation } from "@/i18n";
+import Avatar from "@/app/assets/avatar.jpeg";
 
 export default function Page({ params }: { params: Promise<{ language: string }> }) {
   const { language } = use(params);
@@ -157,16 +157,16 @@ export default function Page({ params }: { params: Promise<{ language: string }>
             <h3 className="text-3xl font-bold mb-4">{t("projects")}</h3>
 
             {projectsData.map((project, index) => (
-              <div key={project.name} className={`flex items-center gap-x-3 mb-4 ${index === 1 ? 'page-break' : ''}`}>
-                <Image src={project.img_path} alt={project.name} width={400} height={250} style={{ width: 'auto', height: 'auto' }} loading="eager" />
+              <div key={project.name} className={`flex items-start gap-x-3 mb-4 ${index === 1 ? 'page-break' : ''}`}>
+                <Image src={project.img_path} alt={project.name} width={350} height={350} style={{ width: 'auto', height: 'auto' }} loading="eager" />
                 <div className="flex-1">
-                  <h4 className="text-2xl font-bold leading-8">{project.name}</h4>
+                  <h4 className="text-2xl font-bold">{project.name}</h4>
                   <div className="text-lg mb-4 flex items-center gap-1">
                     <a className="hover:text-secondary" href={project.source_link} target="_blank">Github</a>
                     <span className="text-gray-600">|</span>
                     <a className="hover:text-secondary" href={project.demo_link} target="_blank">Demo</a>
                   </div>
-                  <p className="text-lg mb-1">{project.description}</p>
+                  <p className="text-lg mb-4">{project.description}</p>
                   <div className="text-lg mb-4 flex items-center gap-1">
                     {t("techStack")}: {project.techStack}
                   </div>

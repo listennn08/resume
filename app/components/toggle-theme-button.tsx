@@ -6,21 +6,23 @@ import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function ToggleThemeButton() {
   const [isDark, setIsDark] = useState(false);
+  const systemTheme = typeof window !== "undefined" ? window.matchMedia("(prefers-color-scheme: dark)").matches : false;
 
   useEffect(() => {
-    setIsDark(document.cookie.includes("theme=dim"));
-  }, [])
+    if (document.cookie.includes("theme=")) {
+      const theme = document.cookie.split("theme=")[1].split(";")[0] as "dark" | "light";
+      setTheme(theme);
+    } else {
+      setTheme(systemTheme ? "dark" : "light");
+    }
+  }, []);
 
-  
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
-  useEffect(() => {
-    localStorage.setItem("theme", isDark ? "dim" : "pastel");
-    // change html data-theme
-    document.cookie = `theme=${isDark ? "dim" : "pastel"}; path=/; max-age=31536000`;
-    document.documentElement.setAttribute("data-theme", isDark ? "dim" : "pastel");
-  }, [isDark]);
+  const setTheme = (theme: "dark" | "light") => {
+    document.cookie = `theme=${theme}; path=/; max-age=31536000`;
+    document.documentElement.setAttribute("data-theme", theme);
+    setIsDark(theme === "dark");
+  }
+  const toggleTheme = () => setTheme(!isDark ? "dark" : "light");
 
   return (
     <button className="btn btn-sm btn-link text-yellow-500" onClick={toggleTheme}>
@@ -30,7 +32,7 @@ export default function ToggleThemeButton() {
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ default: { type: "spring", stiffness: 100 }, opacity: { ease: "linear" } }}
         >
-          <FaMoon size={24} />
+          <FaMoon size={16} />
         </motion.div>
       ) : (
         <motion.div
@@ -38,7 +40,7 @@ export default function ToggleThemeButton() {
           animate={{ opacity: 1, scale: 1, rotate: -90 }}
           transition={{ default: { type: "spring", stiffness: 100 }, opacity: { ease: "linear" } }}
         >
-          <FaSun size={24} />
+          <FaSun size={16} />
         </motion.div>
       )}
     </button>

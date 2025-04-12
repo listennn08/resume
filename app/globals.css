@@ -1,11 +1,9 @@
 @import "tailwindcss";
 @plugin "daisyui";
-@custom-variant dark (&:where([data-theme="dim"]));
-@custom-variant light (&:where([data-theme="pastel"]));
 
 @plugin "daisyui/theme" {
-  name: "pastel";
-  default: false;
+  name: "light";
+  default: true;
   prefersdark: false;
   color-scheme: "light";
   --color-base-100: oklch(100% 0 0);
@@ -39,7 +37,7 @@
 }
 
 @plugin "daisyui/theme" {
-  name: "dim";
+  name: "dark";
   default: false;
   prefersdark: false;
   color-scheme: "dark";
@@ -72,7 +70,6 @@
   --depth: 0;
   --noise: 0;
 }
-
 
 body {
   background: var(--color-base-300);

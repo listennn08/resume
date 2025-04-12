@@ -4,14 +4,15 @@ import { fallbackLng, languages, cookieName } from "@/i18n/settings";
 
 export const config = {
   // matcher: '/:language*'
-  matcher: ["/((?!_next/static|_next/images|images|icons|favicon.ico|manifest.json|images).*)"],
+  matcher: ["/((?!_next/static|_next/images?|images|icons|favicon.ico|manifest.json|assets).*)"],
 };
 
 export function middleware(req: NextRequest) {
   let lng;
+  acceptLanguage.languages(languages);
   if (req.cookies.has(cookieName))
     lng = acceptLanguage.get(req.cookies.get(cookieName)!.value);
-  if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
+  if (!lng) lng = acceptLanguage.get(req.headers.get("accept-language"));
   if (!lng) lng = fallbackLng;
 
   const response = NextResponse.next();
@@ -26,6 +27,12 @@ export function middleware(req: NextRequest) {
     );
   }
 
+  // redirect to resume if not in /resume
+  if (!req.nextUrl.pathname.endsWith("/resume")) {
+    console.log(req.nextUrl.pathname)
+    return NextResponse.redirect(new URL(`/${lng}/resume`, req.url));
+  }
+
   // set lng
   if (req.headers.has("referer")) {
     const refererUrl = new URL(req.headers.get("referer")!);
@@ -37,7 +44,7 @@ export function middleware(req: NextRequest) {
 
   // set theme
   const theme = req.cookies.get('theme')?.value;
-  if (theme === 'dim' || theme === 'pastel') {
+  if (theme === 'dark' || theme === 'light') {
     response.cookies.set('theme', theme);
     response.headers.set('x-theme', theme);
   }
