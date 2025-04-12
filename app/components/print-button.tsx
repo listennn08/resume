@@ -12,7 +12,7 @@ export default function PrintButton({ children }: { children: React.ReactNode })
   return (
     <>
       <main  className="resume max-w-5xl mx-auto card border border-gray-300 hover:shadow-md transition-all bg-base-100 print:border-0 dark:shadow-white">
-        <div ref={contentRef} className="card-body !py-10 !px-10 print:bg-white">
+        <div ref={contentRef} className="card-body md:!p-10 print:bg-white">
           {children}
         </div>
       </main>

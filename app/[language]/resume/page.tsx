@@ -27,22 +27,22 @@ export default function Page({ params }: { params: Promise<{ language: string }>
 
   return (
     <>
-      <div className="fixed top-4 right-4 z-50 flex gap-x-6 items-center">
+      <div className="fixed top-0 inset-x-0 z-50 py-4 flex gap-x-6 items-center justify-end bg-base-100/20 backdrop-blur">
         <TranslateButton />
         <ToggleThemeButton />
       </div>
       <PrintButton>
         <>
-          <section className="flex">
-            <div className="w-3/12">
+          <section className="flex flex-wrap">
+            <div className="w-full md:w-1/4 flex items-center md:items-start flex-col mb-4 md:mb-0 print:w-1/4">
               <Image
                 src={Avatar}
                 alt="Avatar"
-                className="logo mx-4 mb-4 rounded-full"
+                className="logo mx-auto my-2 rounded-full"
                 height={128}
                 loading="eager"
               />
-              <div>
+              <div className="text-center md:text-left">
                 <h1 className="text-3xl font-bold">
                   {t("name")}
                   {language === "zh-TW" &&  (
@@ -54,10 +54,11 @@ export default function Page({ params }: { params: Promise<{ language: string }>
                 <h2 className="text-xl">{t("title")}</h2>
               </div>
             </div>
-            <div className="w-9/12 flex flex-col p-4">
-              <p className="text-lg text-pretty border-b border-gray-300 pb-8 mb-4">
+            <div className="w-full md:w-3/4 flex flex-col mb-6 md:mb-0 print:w-3/4">
+              <p className="text-lg text-pretty border-gray-300">
                 {t("introduce")}
               </p>
+              <div className="divider after:h-[1px] after:bg-gray-300 before:h-[1px] before:bg-gray-300" />
               <div className="text-lg mb-2">
                 {t("email")}: <a href="mailto:c6427733@gmail.com" className="not:dark:text-info font-bold hover:text-secondary hover:underline">c6427733@gmail.com</a>
               </div>
@@ -116,7 +117,7 @@ export default function Page({ params }: { params: Promise<{ language: string }>
             <div className="flex flex-col gap-y-8 divide-y divide-gray-300">
               {experienceData.map((experience, index) => (
                 <div key={experience.company} className={`flex flex-col pb-8 ${index === 1 ? 'page-break' : ''}`}>
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h4 className="text-2xl font-bold">{parse(experience.company)}</h4>
                     <span className="text-gray-400 italic">{parse(experience.duration)}</span>
                   </div>
@@ -155,24 +156,25 @@ export default function Page({ params }: { params: Promise<{ language: string }>
 
           <section className="mb-6">
             <h3 className="text-3xl font-bold mb-4">{t("projects")}</h3>
-
-            {projectsData.map((project, index) => (
-              <div key={project.name} className={`flex items-start gap-x-3 mb-4 ${index === 1 ? 'page-break' : ''}`}>
-                <Image src={project.img_path} alt={project.name} width={350} height={350} style={{ width: 'auto', height: 'auto' }} loading="eager" />
-                <div className="flex-1">
-                  <h4 className="text-2xl font-bold">{project.name}</h4>
-                  <div className="text-lg mb-4 flex items-center gap-1">
-                    <a className="hover:text-secondary" href={project.source_link} target="_blank">Github</a>
-                    <span className="text-gray-400">|</span>
-                    <a className="hover:text-secondary" href={project.demo_link} target="_blank">Demo</a>
-                  </div>
-                  <p className="text-lg mb-4">{project.description}</p>
-                  <div className="text-lg mb-4 flex items-center gap-1">
-                    {t("techStack")}: {project.techStack}
+            <div className="flex flex-col gap-y-8 divide-y divide-gray-300">
+              {projectsData.map((project, index) => (
+                <div key={project.name} className={`flex flex-wrap items-center gap-x-3 mb-4 ${index === 1 ? 'page-break' : ''}`}>
+                  <Image src={project.img_path} alt={project.name} width={400} height={350} loading="eager" />
+                  <div className="flex-1">
+                    <h4 className="text-2xl font-bold">{project.name}</h4>
+                    <div className="text-lg mb-4 flex items-center gap-1">
+                      <a className="hover:text-secondary" href={project.source_link} target="_blank">Github</a>
+                      <span className="text-gray-400">|</span>
+                      <a className="hover:text-secondary" href={project.demo_link} target="_blank">Demo</a>
+                    </div>
+                    <p className="text-lg mb-4">{project.description}</p>
+                    <div className="text-lg mb-4 flex items-center gap-1">
+                      {t("techStack")}: {project.techStack}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </section>
 
           <section className="mb-6">

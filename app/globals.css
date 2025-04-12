@@ -71,12 +71,16 @@
   --noise: 0;
 }
 
+html {
+  font-size: 14px;
+}
+
 body {
   background: var(--color-base-300);
   color: var(--foreground);
   font-family: 'Noto Sans TC', 'Noto Sans', sans-serif;
   font-weight: 500;
-  padding: 40px 0;
+  @apply py-20;
 }
 
 .page-break {
@@ -89,5 +93,11 @@ body {
   }
   body {
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 16px
   }
 }
