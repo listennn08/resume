@@ -6,15 +6,15 @@ import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function ToggleThemeButton() {
   const [isDark, setIsDark] = useState(false);
-  const systemTheme = typeof window !== "undefined" ? window.matchMedia("(prefers-color-scheme: dark)").matches : false;
+  const systemTheme = typeof window !== "undefined" ? window.matchMedia("(prefers-color-scheme: dark)").matches : false
 
   useEffect(() => {
     if (document.cookie.includes("theme=")) {
       const theme = document.cookie.split("theme=")[1].split(";")[0] as "dark" | "light";
       setTheme(theme);
-    } else {
-      setTheme(systemTheme ? "dark" : "light");
     }
+
+    setIsDark(systemTheme);
   }, []);
 
   const setTheme = (theme: "dark" | "light") => {
