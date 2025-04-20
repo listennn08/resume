@@ -8,38 +8,38 @@ export const config = {
 };
 
 export function middleware(req: NextRequest) {
-  let lng;
+  const response = NextResponse.next();
+  const pathname = req.nextUrl.pathname;
+  let lng: string | null | undefined;
+
   acceptLanguage.languages(languages);
   if (req.cookies.has(cookieName))
     lng = acceptLanguage.get(req.cookies.get(cookieName)!.value);
   if (!lng) lng = acceptLanguage.get(req.headers.get("accept-language"));
   if (!lng) lng = fallbackLng;
 
-  const response = NextResponse.next();
-
-  // Redirect if lng in path is not supported
-  if (
-    !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
-    !req.nextUrl.pathname.startsWith("/_next")
-  ) {
-    return NextResponse.redirect(
-      new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
-    );
-  }
-
-  // redirect to resume if not in /resume
-  if (!req.nextUrl.pathname.endsWith("/resume")) {
-    console.log(req.nextUrl.pathname)
+  // Auto-redirect to /lng/resume if locale prefix is missing
+  const isMissingLocale = !languages.some((loc) => pathname.startsWith(`/${loc}`));
+  const isNextAsset = pathname.startsWith("/_next");
+  if (isMissingLocale && !isNextAsset) {
     return NextResponse.redirect(new URL(`/${lng}/resume`, req.url));
   }
 
-  // set lng
+  const maybeLng = pathname.split("/")[1];
+
+  if (languages.includes(maybeLng) && !pathname.endsWith("/resume") && !isNextAsset) {
+    return NextResponse.redirect(new URL(`/${maybeLng}/resume`, req.url));
+  }
+
+  // set language cookie from referer
   if (req.headers.has("referer")) {
     const refererUrl = new URL(req.headers.get("referer")!);
     const lngInReferer = languages.find((l) =>
       refererUrl.pathname.startsWith(`/${l}`)
     );
-    if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
+    if (lngInReferer) {
+      response.cookies.set(cookieName, lngInReferer);
+    }
   }
 
   // set theme
