@@ -9,9 +9,11 @@ export default function ToggleThemeButton() {
   const systemTheme = typeof window !== "undefined" ? window.matchMedia("(prefers-color-scheme: dark)").matches : false
 
   useEffect(() => {
+
     if (document.cookie.includes("theme=")) {
       const theme = document.cookie.split("theme=")[1].split(";")[0] as "dark" | "light";
       setTheme(theme);
+      return
     }
 
     setIsDark(systemTheme);
